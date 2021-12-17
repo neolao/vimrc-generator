@@ -1,0 +1,16 @@
+name: Generate
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  vim-basic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate
+        run: ./generate-basic.sh
+      - name: Zip
+        run: zip -r ./generated/vim-basic.zip ./generated/vim-basic
