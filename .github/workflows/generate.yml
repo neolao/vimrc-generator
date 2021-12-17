@@ -15,7 +15,9 @@ jobs:
       - name: Generate
         run: ./generate-basic.sh
       - name: Zip
-        run: zip -r ./generated/vim-basic.zip ./generated/vim-basic
+        run: |
+          cd ./generated
+          zip -r ./vim-basic.zip ./vim-basic
       - uses: ncipollo/release-action@v1
         with:
           name: "${{ github.event.inputs.version }}"
