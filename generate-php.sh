@@ -53,6 +53,7 @@ cat ./parts/vim-plug/end.vim >> $VIMRC_PATH
 cat ./parts/vim-plug/auto-install-plugins.vim >> $VIMRC_PATH
 
 # Plugins config
+cat ./parts/vim-plug/deoplete/deoplete.vim >> $VIMRC_PATH
 cat ./parts/vim-plug/nerdtree/nerdtree.vim >> $VIMRC_PATH
 cat ./parts/vim-plug/devicons/devicons.vim >> $VIMRC_PATH
 cat ./parts/vim-plug/ncm2/nvm2.vim >> $VIMRC_PATH

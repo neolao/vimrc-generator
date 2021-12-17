@@ -14,7 +14,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 
 " Auto complete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
 
 " Interface
 Plug 'neolao/vim-eighties'
