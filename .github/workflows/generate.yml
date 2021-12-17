@@ -19,5 +19,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           name: "${{ github.event.inputs.version }}"
+          tag: "$ github.event.inputs.version }}"
           artifacts: "generated/vim-basic.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
