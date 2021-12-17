@@ -15,33 +15,39 @@ mkdir -p $VIM_PLUGGED_PATH
 
 cp ./parts/vim.sh $VIM_RUNTIME_PATH/vim.sh
 
-#echo "set runtimepath=.,./after" > $VIMRC_PATH
 echo "" > $VIMRC_PATH
 
 cp ./parts/themes/colors/pablo.vim $VIM_COLORS_PATH
+cp ./parts/themes/rgb.txt $VIM_RUNTIME_PATH
 cat ./parts/themes/pablo.vim >> $VIMRC_PATH
 
 cat ./parts/encodings/utf-8.vim >> $VIMRC_PATH
-#cat ./parts/term/xterm-256color.vim >> $VIMRC_PATH
+cat ./parts/term/xterm-256color.vim >> $VIMRC_PATH
 echo "set nocompatible" >> $VIMRC_PATH
+cat ./parts/backup/setup.vim >> $VIMRC_PATH
+cat ./parts/undo/setup.vim >> $VIMRC_PATH
+cat ./parts/swap/disable.vim >> $VIMRC_PATH
 cat ./parts/status-line/always.vim >> $VIMRC_PATH
 cat ./parts/status-line/layout/a.vim >> $VIMRC_PATH
 cat ./parts/indent/auto.vim >> $VIMRC_PATH
-cat ./parts/swapfile/disable.vim >> $VIMRC_PATH
 cat ./parts/line-numbers/enable.vim >> $VIMRC_PATH
 cat ./parts/mouse/enable.vim >> $VIMRC_PATH
 cat ./parts/wrapping/disable.vim >> $VIMRC_PATH
 cat ./parts/whitespace/show.vim >> $VIMRC_PATH
+cat ./parts/autoread/enable.vim >> $VIMRC_PATH
+cat ./parts/search/setup.vim >> $VIMRC_PATH
+cat ./parts/wildmenu/enable.vim >> $VIMRC_PATH
+cat ./parts/ttyfast/enable.vim >> $VIMRC_PATH
 
 # Syntax
-cp ./parts/syntax/languages/syntax.vim $VIM_SYNTAX_PATH
-cp ./parts/syntax/languages/nosyntax.vim $VIM_SYNTAX_PATH
-cp ./parts/syntax/languages/vim.vim $VIM_SYNTAX_PATH
+cp ./parts/syntax/languages/* $VIM_SYNTAX_PATH
 cat ./parts/syntax/enable.vim >> $VIMRC_PATH
 
 # Plugins
-cp ./parts/vim-plug/plug.vim $VIM_AUTOLOAD_PATH/plug.vim
-cat ./parts/vim-plug/plugins.vim >> $VIMRC_PATH
+cp ./parts/vim-plug/plug.vim $VIM_AUTOLOAD_PATH
+cat ./parts/vim-plug/begin.vim >> $VIMRC_PATH
+cat ./parts/vim-plug/common.vim >> $VIMRC_PATH
+cat ./parts/vim-plug/end.vim >> $VIMRC_PATH
 cat ./parts/vim-plug/auto-install-plugins.vim >> $VIMRC_PATH
 
 # Plugins config
