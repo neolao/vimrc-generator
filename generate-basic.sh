@@ -29,7 +29,9 @@ cat ./parts/status-line/layout/a.vim >> $VIMRC_PATH
 cat ./parts/indent/auto.vim >> $VIMRC_PATH
 cat ./parts/swapfile/disable.vim >> $VIMRC_PATH
 cat ./parts/line-numbers/enable.vim >> $VIMRC_PATH
-#cat ./parts/whitespace/show.vim >> $VIMRC_PATH
+cat ./parts/mouse/enable.vim >> $VIMRC_PATH
+cat ./parts/wrapping/disable.vim >> $VIMRC_PATH
+cat ./parts/whitespace/show.vim >> $VIMRC_PATH
 
 # Syntax
 cp ./parts/syntax/languages/syntax.vim $VIM_SYNTAX_PATH
@@ -39,12 +41,14 @@ cat ./parts/syntax/enable.vim >> $VIMRC_PATH
 
 # Plugins
 cp ./parts/vim-plug/plug.vim $VIM_AUTOLOAD_PATH/plug.vim
-echo "call plug#begin('plugged')" >> $VIMRC_PATH
+cat ./parts/vim-plug/plugins.vim >> $VIMRC_PATH
+cat ./parts/vim-plug/auto-install-plugins.vim >> $VIMRC_PATH
 
-# File explorer
-echo "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }" >> $VIMRC_PATH
-echo "Plug 'neolao/vim-nerdtree-tabs'" >> $VIMRC_PATH
-echo "Plug 'Xuyuanp/nerdtree-git-plugin'" >> $VIMRC_PATH
-echo "Plug 'pseewald/nerdtree-tagbar-combined'" >> $VIMRC_PATH
+# Plugins config
+cat ./parts/vim-plug/nerdtree/nerdtree.vim >> $VIMRC_PATH
+cat ./parts/vim-plug/devicons/devicons.vim >> $VIMRC_PATH
 
-echo "call plug#end()" >> $VIMRC_PATH
+# Shortcuts
+cat ./parts/shortcuts/lines.vim >> $VIMRC_PATH
+cat ./parts/shortcuts/tabs.vim >> $VIMRC_PATH
+cat ./parts/shortcuts/nerdtree.vim >> $VIMRC_PATH
