@@ -1,9 +1,11 @@
 name: Generate
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+    inputs:
+      version:
+        description: Version
+        required: true
 
 jobs:
   vim-basic:
@@ -14,3 +16,8 @@ jobs:
         run: ./generate-basic.sh
       - name: Zip
         run: zip -r ./generated/vim-basic.zip ./generated/vim-basic
+      - uses: ncipollo/release-action@v1
+        with:
+          name: "${{ github.event.inputs.version }}"
+          artifacts: "generated/vim-basic.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
