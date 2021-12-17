@@ -41,6 +41,7 @@ cat ./parts/ttyfast/enable.vim >> $VIMRC_PATH
 
 # Syntax
 cp ./parts/syntax/languages/* $VIM_SYNTAX_PATH
+cp ./parts/syntax/filetype.vim $VIM_RUNTIME_PATH
 cat ./parts/syntax/enable.vim >> $VIMRC_PATH
 
 # Plugins
